@@ -553,7 +553,7 @@ for (cuerpo in cuerpos){
 }
 ```
 
-Como vemos, todas las muestras, a excepción de "VR/Action camera" todas las muestras de tipo de cuerpo siguen una distribución normal.
+Como vemos, a excepción de "VR/Action camera" todas las muestras de tipo de cuerpo siguen una distribución normal debido a que su longitud es mayor de 30.
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
 plot(x = data$tipo_cuerpo)
@@ -567,7 +567,7 @@ length( filter(data, marca=="Canon")$puntuacion.general)
 
 ```
 
-En este caso, ambas muestras presentan una distribución normal.
+En este caso, ambas muestras presentan una distribución normal debido a que su longitud es mayor de 30.
 
 Procedemos a comprobar la homogeneidad de la varianza para los dos grupos mediante el test de Barlett.
 
@@ -754,6 +754,15 @@ Aún y así podemos encontrar una correlación positiva entre la puntuación de 
 Todos los resultados obtenidos se han ido presentando en cada uno de los apartados en tablas y gráficas.
 
 # Resolución del problema. A partir de los resultados obtenidos, ¿Cuáles son las conclusiones? ¿Los resultados permiten responder al problema?
+
+A continuación se mostrarán las conclusiones extraídas a partir del análisis realizado:
+* Las cámaras más caras son las SLR "grandes", que son las que se emplean profesionalmente. Las compactas, ultracompactas y cámaras de acción son las más asequibles.
+* La aparición de dispositivos móviles con cámaras de calidad ha hecho desaparecer prácticamente por completo el segmento de las cámaras compactas y ultracompactas, manteniendose únicamente actualizadas el sector de las cámaras profesionales.
+* No hay diferencia significativa entre la puntuación general recibida por cámaras Canon y Nikon
+* Factores como tener GPS, tener un tipo de cuerpo "Large SLR" aumentan el precio final de la cámara.
+* El precio afecta de forma negativa en la puntuación de la cámara final.
+* La puntuación en la ergonomia o las características si que afectan de forma positiva en la puntuación general que recibirá la cámara. En cambio, la puntuación en la precisión de la cámara afecta de forma negativa en la puntuación final que esta tendrá.
+* Podemos encontrar una correlación positiva entre la puntuación de las características y la puntuación del visor, entre el precio y la punutuación de ergonomía y manejo, y entre el precio y la puntuación de las características, cercana a 0.5 para todos los casos.
 
 # Código: Hay que adjuntar el código, preferiblemente en R, con el que se han realizado la limpieza, análisis y representación de los datos. Si lo preferís, también podéis trabajar en Python.
 
